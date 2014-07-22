@@ -1,16 +1,4 @@
 #!/usr/bin/env bash
-$HOME = "/usr/local"
-if [ ! -d "$HOME/bin" ] ; then
-    mkdir $HOME/bin
-
-    if [ -f $HOME/.profile ]; then
-        . $HOME/.profile
-
-        if [[ ":$PATH:" != *":$HOME/bin:"* ]]; then
-            echo -e '\nPATH="$HOME/bin:$PATH"' >> $HOME/.profile
-        fi
-    fi
-fi
 
 # test if curl/wget is installed
 if hash curl 2>&- ; then
@@ -22,8 +10,8 @@ else
    exit 1
 fi
 
-$CMD $HOME/bin/modman https://raw.github.com/colinmollenhour/modman/master/modman
+$CMD /usr/local/bin/modman https://raw.github.com/colinmollenhour/modman/master/modman
 
-chmod +x $HOME/bin/modman
+chmod +x /usr/local/bin/modman
 
-echo "Done. Modman installed in $HOME/bin/modman"
+echo "Done. Modman installed in /usr/local/bin/modman"
