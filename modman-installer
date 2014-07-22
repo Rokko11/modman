@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-
+$HOME = "/usr/local"
 if [ ! -d "$HOME/bin" ] ; then
     mkdir $HOME/bin
 
